@@ -6,21 +6,22 @@
 }
 
 body {
-  background-color: #caf0f8;
+  background-color: #023047;
   height: 100vh;
   font-weight: 600;
 }
 
 h1 {
   font-size: 7rem;
-  color: black;
+  color: #f4a261;
+  /* color: white; */
   text-align: center;
   grid-area: title;
 }
 
 .main-container {
   display: grid;
-  grid-template-columns: (3, 1fr);
+  /* grid-template-columns: (3, 1fr); */
   justify-content: center;
   align-content: center;
   padding-top: 2rem;
@@ -30,9 +31,85 @@ h1 {
 }
 
 #status {
+  color: white;
   font-size: 2rem;
   font-weight: 400;
-  color: black;
   text-align: center;
+  text-transform: uppercase;
+  grid-area: status;
+  padding-bottom: 1rem;
+}
 
+#status .pick {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  gap: 10px;
+  padding-top: 10px;
+}
+
+#status .pick div {
+  color: black;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+}
+
+#status .pick div:nth-child(1) {
+  background-color: #ff006e;
+}
+
+#status .pick div:nth-child(2) {
+  background-color: #8338ec;
+}
+
+.hide {
+  visibility: hidden;
+  transition: 10px;
+  height: 0;
+  opacity: 0;
+}
+
+#status>p {
+  padding-top: 10px;
+}
+
+#board {
+  width: 50vh;
+  height: 50vh;
+  margin: auto;
+  grid-area: board;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 8px;
+}
+
+#board div {
+  font-weight: 600;
+}
+
+.box {
+  border: none;
+  background-color: #219ebc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.box:hover {
+  background-color: white;
+}
+
+.box:disabled {
+  color: black;
+  font-size: 5rem;
+  cursor: default;
+}
+
+.box:disabled.x {
+  background-color: #f4a261;
 }
