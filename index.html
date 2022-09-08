@@ -9,7 +9,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css" />
 
@@ -17,12 +17,12 @@
 </head>
 
 <body>
-  <div class="main-container">
+  <div class="container">
     <h1>TIC-TAC-TOE</h1>
     <div id="status">
-      <div class="pick-div">
-        Pick "X" or "O"
-        <div class="pick">
+      <div class="question">
+        Please choose
+        <div class="choices">
           <button data-player-name="X">X</button>
           or
           <button data-player-name="O">O</button>
@@ -30,7 +30,6 @@
       </div>
       <p class="hide"></p>
     </div>
-
     <div id="board">
       <div class="box" data-board-index="0" data-index="0"></div>
       <div class="box" data-board-index="0" data-index="1"></div>
@@ -42,15 +41,30 @@
       <div class="box" data-board-index="2" data-index="1"></div>
       <div class="box" data-board-index="2" data-index="2"></div>
     </div>
-
-    <div id="status">
+    <!-- <div id="stats">
       <div>
-        <p>X score: <span data-x-score>0</span></p>
+        <p>X score: <span data-x-score>0</span>
+        </p>
+        <p>Tie: <span data-tie>0</span></p>
       </div>
-
+      <div>
+        <p>O score: <span data-o-score>0</span>
+        </p>
+        <p>Tie: <span data-tie>0</span></p>
+      </div>
+    </div> -->
+    <div id="moves">
+      <h2>Game History</h2>
+      <ol></ol>
     </div>
+  </div>
+  <div id="history">
+    <button class="previous">Previous</button>
+    <button class="new-game">New Game</button>
+    <button class="next">Next</button>
+  </div>
 
-
+  <script src="script/main.js"></script>
 </body>
 
 </html>

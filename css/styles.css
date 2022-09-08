@@ -6,57 +6,60 @@
 }
 
 body {
-  background-color: #023047;
+  background-color: #283618;
   height: 100vh;
-  font-weight: 600;
+  font-weight: 700;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-content: center;
+  padding-top: 1rem;
+  grid-template-areas:
+    '. title .'
+    '. status .'
+    '. board history'
+    '. score .';
 }
 
 h1 {
-  font-size: 7rem;
-  color: #f4a261;
-  /* color: white; */
   text-align: center;
+  color: #f4a261;
+  font-size: 7rem;
   grid-area: title;
 }
 
-.main-container {
-  display: grid;
-  /* grid-template-columns: (3, 1fr); */
-  justify-content: center;
-  align-content: center;
-  padding-top: 2rem;
-  grid-template-areas:
-    '. title .'
-    '. status .';
-}
-
 #status {
+  padding-bottom: 1rem;
   color: white;
-  font-size: 2rem;
-  font-weight: 400;
   text-align: center;
   text-transform: uppercase;
+  font-size: 2rem;
   grid-area: status;
-  padding-bottom: 1rem;
+  font-weight: 300;
 }
 
-#status .pick {
+#status .choices {
   display: grid;
   grid-template-columns: repeat(3, auto);
   justify-content: center;
-  align-items: center;
-  font-size: 1.5rem;
   gap: 10px;
   padding-top: 10px;
+  font-size: 1.5rem;
+  align-items: center;
 }
 
-#status .pick div {
-  color: black;
-  font-weight: 600;
+#status .choices button {
   text-transform: uppercase;
-  padding: 1rem 1.5rem;
   border: none;
-  border-radius: 5px;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: white;
+  background-color: #e76f51;
 }
 
 #status .pick div:nth-child(1) {
@@ -68,10 +71,10 @@ h1 {
 }
 
 .hide {
-  visibility: hidden;
-  transition: 10px;
   height: 0;
+  visibility: hidden;
   opacity: 0;
+  transition: 500ms;
 }
 
 #status>p {
@@ -89,27 +92,111 @@ h1 {
   grid-gap: 8px;
 }
 
-#board div {
-  font-weight: 600;
+#board button {
+  font-weight: 700;
 }
 
 .box {
   border: none;
-  background-color: #219ebc;
+  background-color: #606c38;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.box:hover {
-  background-color: white;
-}
-
 .box:disabled {
-  color: black;
+  color: white;
   font-size: 5rem;
   cursor: default;
 }
 
 .box:disabled.x {
   background-color: #f4a261;
+}
+
+.box:disabled.o {
+  background-color: bisque;
+}
+
+#stats {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-size: 2rem;
+  padding: 1rem 0;
+  grid-area: score;
+}
+
+#stats div:nth-child(2) {
+  text-align: right;
+}
+
+#stats ol {
+  list-style-position: inside;
+}
+
+#moves {
+  visibility: hidden;
+  opacity: 0;
+  grid-area: history;
+  justify-self: center;
+}
+
+#moves.show {
+  visibility: visible;
+  opacity: 1;
+  transition: 800ms;
+}
+
+#moves h2 {
+  color: white;
+}
+
+#moves ol {
+  list-style-position: inside;
+  color: white;
+}
+
+#history {
+  visibility: hidden;
+  opacity: 0;
+  width: 50%;
+  padding: 1rem 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+#history.show {
+  visibility: visible;
+  opacity: 1;
+  transition: 800ms 1s;
+}
+
+.previous,
+.new-game,
+.next {
+  text-transform: uppercase;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  font-weight: 700;
+}
+
+#history button:nth-child(odd):hover {
+  background-color: #f4a261;
+  color: white;
+}
+
+#history button:nth-child(even):hover {
+  background-color: bisque;
+  color: white;
+}
+
+#history button:disabled,
+#history button:disabled:hover {
+  opacity: 0.5;
+  background-color: white;
+  color: black;
 }
