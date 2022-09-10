@@ -6,7 +6,10 @@
 }
 
 body {
-  background-color: #283618;
+  /* background-color: #283618; */
+  background-image: url("/assets/bg-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100vh;
   font-weight: 700;
 }
@@ -26,7 +29,7 @@ body {
 
 h1 {
   text-align: center;
-  color: #f4a261;
+  color: white;
   font-size: 7rem;
   grid-area: title;
 }
@@ -38,7 +41,7 @@ h1 {
   text-transform: uppercase;
   font-size: 2rem;
   grid-area: status;
-  font-weight: 300;
+  font-weight: 500;
 }
 
 #status .choices {
@@ -59,14 +62,14 @@ h1 {
   font-weight: 700;
   font-size: 1.5rem;
   color: white;
-  background-color: #e76f51;
+  /* background-color: #b5179e; */
 }
 
-#status .pick div:nth-child(1) {
+#status .choices button:nth-child(1) {
   background-color: #ff006e;
 }
 
-#status .pick div:nth-child(2) {
+#status .choices button:nth-child(2) {
   background-color: #8338ec;
 }
 
@@ -98,7 +101,7 @@ h1 {
 
 .box {
   border: none;
-  background-color: #606c38;
+  background-color: white;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -110,11 +113,11 @@ h1 {
 }
 
 .box:disabled.x {
-  background-color: #f4a261;
+  background-color: #ff006e;
 }
 
 .box:disabled.o {
-  background-color: bisque;
+  background-color: #8338ec;
 }
 
 #stats {
